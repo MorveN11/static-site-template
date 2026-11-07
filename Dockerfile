@@ -23,7 +23,7 @@ ENV PUBLIC_SITE_URL=$PUBLIC_SITE_URL \
 RUN pnpm build
 
 # Stage 2: serve with unprivileged nginx
-FROM nginxinc/nginx-unprivileged:1.29-alpine
+FROM nginxinc/nginx-unprivileged:1.31-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
 
