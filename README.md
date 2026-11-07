@@ -4,11 +4,11 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D24-339933)](package.json)
 
-Minimal Astro static site (portfolio + blog) served by nginx, built in Docker, deployed to Dokploy via GitHub Actions.
+Minimal Astro static site (starter for any static site) served by nginx, built in Docker, deployed to Dokploy via GitHub Actions.
 
 ## Stack
 
-Astro 7 (static output), MDX, Tailwind v4, sitemap + RSS, Biome, pnpm, Node 24, nginx (unprivileged), optional Umami analytics.
+Astro 7 (static output), Tailwind v4, sitemap, Biome, pnpm, Node 24, nginx (unprivileged), optional Umami analytics.
 
 ## Quick start
 
@@ -31,8 +31,7 @@ pnpm dev        # http://localhost:4321
 ## Project structure
 
 ```
-src/pages/            routes (index, about, projects, blog, rss.xml, 404)
-src/content/blog/     posts (.md / .mdx)
+src/pages/            routes (index, about, projects, 404)
 src/components/       Header, Footer, BaseHead, Umami
 src/layouts/          BaseLayout
 src/styles/           global.css (Tailwind)
@@ -41,17 +40,17 @@ Dockerfile nginx.conf docker-compose.yml
 .github/workflows/    ci.yml, deploy.yml
 ```
 
-## Add a blog post
+## Add a blog later
 
-Create `src/content/blog/my-post.md` (or `.mdx`) with the frontmatter defined in `src/content.config.ts` (`title`, `description`, `date`, `draft`). The slug is the filename.
+`pnpm add @astrojs/mdx @astrojs/rss`, add `mdx()` to `integrations` in `astro.config.mjs`, define a `blog` collection in `src/content.config.ts`, then add `src/pages/blog/` and `src/pages/rss.xml.ts`.
 
 ## Customize checklist
 
 - [ ] Rename the project in `package.json` (and the repo)
-- [ ] Set `PUBLIC_SITE_URL` (canonical URLs, sitemap, RSS)
+- [ ] Set `PUBLIC_SITE_URL` (canonical URLs, sitemap)
 - [ ] Replace the Umami placeholder host in the `nginx.conf` CSP (or remove it if unused)
 - [ ] Replace `public/favicon.svg`
-- [ ] Replace sample pages and posts with your content
+- [ ] Replace sample pages with your content
 
 ## Docker (local production preview)
 

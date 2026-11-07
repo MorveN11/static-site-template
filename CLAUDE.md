@@ -1,11 +1,10 @@
 # static-site-template
 
-Astro static site (portfolio + blog), served by nginx in Docker, deployed to Dokploy.
+Astro static site (starter for any static site), served by nginx in Docker, deployed to Dokploy.
 
 ## Layout
 
 - `src/pages`, `src/layouts`, `src/components`, `src/styles`: site code
-- `src/content/blog`: Markdown/MDX posts (typed in `src/content.config.ts`)
 - `public/`: static files; `dist/`: build output (gitignored)
 - `Dockerfile`, `nginx.conf`, `docker-compose.yml`: production image and local preview
 - `.github/workflows`: `ci.yml` (lint, check, build, docker build), `deploy.yml` (push image + Dokploy webhook)

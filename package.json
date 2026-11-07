@@ -1,6 +1,6 @@
 {
   "name": "static-site-template",
-  "description": "Minimal Astro starter for portfolios and blogs: static output, nginx Docker image, Dokploy CI/CD.",
+  "description": "Minimal Astro starter for static sites: static output, nginx Docker image, Dokploy CI/CD.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,7 +13,6 @@
   "keywords": [
     "astro",
     "portfolio",
-    "blog",
     "static-site",
     "template",
     "nginx",
@@ -38,8 +37,6 @@
     "down": "docker compose --env-file .env down"
   },
   "dependencies": {
-    "@astrojs/mdx": "8.1.3",
-    "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.4",
     "@tailwindcss/vite": "4.3.5",
     "astro": "7.4.7",
