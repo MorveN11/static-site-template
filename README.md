@@ -1,5 +1,9 @@
 # static-site-template
 
+[![CI](https://github.com/MorveN11/static-site-template/actions/workflows/ci.yml/badge.svg)](https://github.com/MorveN11/static-site-template/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D24-339933)](package.json)
+
 Minimal Astro static site (portfolio + blog) served by nginx, built in Docker, deployed to Dokploy via GitHub Actions.
 
 ## Stack
@@ -140,6 +144,10 @@ After changing Cloudflare features (Turnstile, Web Analytics, etc.), update the 
 ## Workflow
 
 Single branch: `main`. Open PRs against `main`; merging deploys.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

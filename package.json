@@ -1,5 +1,25 @@
 {
   "name": "static-site-template",
+  "description": "Minimal Astro starter for portfolios and blogs: static output, nginx Docker image, Dokploy CI/CD.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorveN11/static-site-template.git"
+  },
+  "homepage": "https://github.com/MorveN11/static-site-template#readme",
+  "bugs": {
+    "url": "https://github.com/MorveN11/static-site-template/issues"
+  },
+  "keywords": [
+    "astro",
+    "portfolio",
+    "blog",
+    "static-site",
+    "template",
+    "nginx",
+    "docker",
+    "dokploy"
+  ],
   "version": "0.0.0",
   "private": true,
   "type": "module",
