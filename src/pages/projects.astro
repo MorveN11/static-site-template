@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  { name: 'Project One', description: 'A short description of the first project.', href: 'https://example.com' },
+  { name: 'Project Two', description: 'A short description of the second project.', href: 'https://example.com' },
+  { name: 'Project Three', description: 'A short description of the third project.', href: 'https://example.com' },
+];
+---
+
+<BaseLayout title="Projects - Your Name" description="Selected projects by Your Name.">
+  <h1 class="mb-6 text-3xl font-bold">Projects</h1>
+  <ul class="grid gap-4 sm:grid-cols-2">
+    {
+      projects.map((p) => (
+        <li class="rounded-lg border border-border bg-surface p-4">
+          <h2 class="text-lg font-semibold">
+            <a href={p.href}>{p.name}</a>
+          </h2>
+          <p class="mt-2 text-muted">{p.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

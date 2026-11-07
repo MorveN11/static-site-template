@@ -1,0 +1,29 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
+];
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class="border-b border-border">
+  <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-4 px-4 py-4">
+    <a href="/" class="font-bold text-fg no-underline">Your Name</a>
+    <nav aria-label="Main">
+      <ul class="flex gap-4">
+        {
+          links.map((l) => (
+            <li>
+              <a href={l.href} aria-current={isActive(l.href) ? 'page' : undefined} class="aria-[current=page]:font-bold">
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

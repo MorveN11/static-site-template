@@ -1,0 +1,23 @@
+# Local production preview. Dokploy deploys the image pushed by CI, not this file.
+services:
+  web:
+    build:
+      context: .
+      args:
+        PUBLIC_SITE_URL: ${PUBLIC_SITE_URL:-}
+        PUBLIC_UMAMI_SCRIPT_URL: ${PUBLIC_UMAMI_SCRIPT_URL:-}
+        PUBLIC_UMAMI_WEBSITE_ID: ${PUBLIC_UMAMI_WEBSITE_ID:-}
+    ports:
+      - "${WEB_HOST_PORT:-8080}:8080"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"

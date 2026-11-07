@@ -1,0 +1,8 @@
+---
+const src = import.meta.env.PUBLIC_UMAMI_SCRIPT_URL;
+const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+// Production builds only, so `pnpm dev` never tracks
+const enabled = import.meta.env.PROD && src && websiteId;
+---
+
+{enabled && <script is:inline defer src={src} data-website-id={websiteId}></script>}

@@ -1,0 +1,39 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly.
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where does it happen?
+      options:
+        - Site (pages / content)
+        - Build / tooling
+        - Docker / nginx
+        - CI/CD
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Expected vs. actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. pnpm install
+        2. pnpm build
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / error output
+      render: shell

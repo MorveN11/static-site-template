@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Umami from '../components/Umami.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  type?: 'website' | 'article';
+}
+
+const { title, description, type } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} type={type} />
+    <Umami />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <Header />
+    <main id="main" class="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
