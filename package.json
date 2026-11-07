@@ -4,11 +4,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MorveN11/static-site-template.git"
+    "url": "git+https://github.com/morvenlabs/static-site-template.git"
   },
-  "homepage": "https://github.com/MorveN11/static-site-template#readme",
+  "homepage": "https://github.com/morvenlabs/static-site-template#readme",
   "bugs": {
-    "url": "https://github.com/MorveN11/static-site-template/issues"
+    "url": "https://github.com/morvenlabs/static-site-template/issues"
   },
   "keywords": [
     "astro",
