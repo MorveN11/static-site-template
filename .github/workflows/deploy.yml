@@ -19,7 +19,7 @@ jobs:
     if: ${{ vars.ENABLE_DEPLOY == 'true' }}
     runs-on: ubuntu-latest
     env:
-      IMAGE: ${{ vars.IMAGE_NAMESPACE }}/${{ github.event.repository.name }}
+      IMAGE: ${{ vars.IMAGE_NAMESPACE || secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}
     steps:
       - uses: actions/checkout@v6
 

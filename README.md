@@ -74,11 +74,11 @@ Build args are read from `.env`. Health endpoint: `/health`.
 
 | Name                      | Type     | Value                                                |
 | ------------------------- | -------- | ---------------------------------------------------- |
-| `DOCKERHUB_USERNAME`      | secret   | Docker Hub user                                      |
+| `DOCKERHUB_USERNAME`      | secret   | Docker Hub user (also the image namespace)           |
 | `DOCKERHUB_TOKEN`         | secret   | Docker Hub access token                              |
 | `DOKPLOY_URL`             | secret   | Dokploy base URL, e.g. `https://dokploy.example.com` |
 | `DOKPLOY_DEPLOY_WEBHOOK`  | secret   | Webhook token from step 6                            |
-| `IMAGE_NAMESPACE`         | variable | Docker Hub namespace                                 |
+| `IMAGE_NAMESPACE`         | variable | Docker Hub org (optional, defaults to the username)  |
 | `ENABLE_DEPLOY`           | variable | `true` to enable `deploy.yml`                        |
 | `PUBLIC_SITE_URL`         | variable | Public site URL (also used by the smoke check)       |
 | `PUBLIC_UMAMI_SCRIPT_URL` | variable | Umami script URL (optional)                          |
